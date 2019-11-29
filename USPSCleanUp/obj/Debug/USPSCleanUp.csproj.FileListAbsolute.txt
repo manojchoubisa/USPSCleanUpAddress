@@ -1,0 +1,118 @@
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 24th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\Ankush\USPS API\Working\April 25th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Ankush\USPS API\Working\April 26th\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.Cache
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Sita\Clients\Mark Pinsley\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csprojResolveAssemblyReference.cache
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.dll
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.dll
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\bin\Debug\LinqToExcel.xml
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.cache
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.CopyComplete
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
