@@ -75,6 +75,7 @@ namespace USPSCleanUp
                 string validateUrl = "?API=Verify&XML=<AddressValidateRequest USERID=\"{0}\"><Address ID=\"{1}\"><Address1>{2}</Address1><Address2>{3}</Address2><City>{4}</City><State>{5}</State><Zip5>{6}</Zip5><Zip4>{7}</Zip4></Address></AddressValidateRequest>";
                 string url = GetURL() + validateUrl;
                 url = String.Format(url, _userid, address.ID.ToString(), address.Address1, address.Address2, address.City, address.State, address.Zip, address.ZipPlus4);
+                url = url.Replace("#","");
                 string addressxml = web.DownloadString(url);
                 if (addressxml.Contains("<Error>"))
                 {

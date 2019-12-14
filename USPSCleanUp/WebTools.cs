@@ -9,8 +9,9 @@ namespace USPSCleanUp
 {
     public class WebTools
     {
-        private const string BaseURL = "http://testing.shippingapis.com/ShippingAPITest.dll";
+        //private const string BaseURL = "http://testing.shippingapis.com/ShippingAPITest.dll";
         //private const string BaseURL = "http://production.shippingapis.com/ShippingAPITest.dll?API=Verify";
+        private const string BaseURL = "http://production.shippingapis.com/ShippingAPITest.dll";
         //Web client instance.
 
         private WebClient wsClient = new WebClient();

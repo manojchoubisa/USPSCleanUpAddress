@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Helper\Logger.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="Rate.cs" />
     <Compile Include="SetColumns.cs">

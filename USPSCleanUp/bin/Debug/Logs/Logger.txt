@@ -1,0 +1,166 @@
+
+Exception : 08-12-2019 22:47:43 => External table is not in the expected format.
+
+StackTrace : 08-12-2019 22:47:43 =>    at System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   at System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OleDb.OleDbConnection.Open()
+   at USPSCleanUp.UploadFile.btnUpload_Click(Object sender, EventArgs e) in D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\UploadFile.cs:line 206
+-------------------------------
+
+Exception : 08-12-2019 22:50:07 => Exception from HRESULT: 0x800A03EC
+
+StackTrace : 08-12-2019 22:50:07 =>    at Microsoft.Office.Interop.Excel._Workbook.SaveAs(Object Filename, Object FileFormat, Object Password, Object WriteResPassword, Object ReadOnlyRecommended, Object CreateBackup, XlSaveAsAccessMode AccessMode, Object ConflictResolution, Object AddToMru, Object TextCodepage, Object TextVisualLayout, Object Local)
+   at USPSCleanUp.UploadFile.ExportDataSetToExcel(DataSet ds, String filepath) in D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\UploadFile.cs:line 635
+-------------------------------
+
+Messgae : 14-12-2019 13:08:01 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:08:01 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:08:53 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:08:53 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:09:19 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:09:24 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:12:42 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:12:57 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:15:32 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:21:51 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:34:36 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:38:46 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:38:52 => Loading input contribution file started
+-------------------------------
+
+Exception : 14-12-2019 13:38:52 => Current thread must be set to single thread apartment (STA) mode before OLE calls can be made. Ensure that your Main function has STAThreadAttribute marked on it. This exception is only raised if a debugger is attached to the process.
+
+StackTrace : 14-12-2019 13:38:52 =>    at System.Windows.Forms.FileDialog.RunDialog(IntPtr hWndOwner)
+   at System.Windows.Forms.CommonDialog.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.CommonDialog.ShowDialog()
+   at USPSCleanUp.UploadFile.ExportDataSetToExcel(DataSet ds, String filepath) in D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\UploadFile.cs:line 628
+-------------------------------
+
+Messgae : 14-12-2019 13:48:47 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:48:49 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 13:49:04 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 13:49:04 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 13:50:04 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 13:50:11 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 13:52:34 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 13:52:36 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:01:59 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:02:01 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:02:21 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 14:02:36 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 14:03:48 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:03:51 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:04:09 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 14:04:20 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 14:05:59 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:08:17 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:08:24 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:08:42 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 14:08:55 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 14:13:47 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:13:52 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:14:08 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 14:14:18 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 14:15:16 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 14:20:59 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 14:21:58 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 14:26:17 => Loading input contribution file finished
+-------------------------------
+
+Messgae : 14-12-2019 23:52:46 => Filling contribution PDF started
+-------------------------------
+
+Messgae : 14-12-2019 23:52:51 => Filling contribution PDF finished
+-------------------------------
+
+Messgae : 14-12-2019 23:53:10 => Loading input contribution file started
+-------------------------------
+
+Messgae : 14-12-2019 23:53:42 => Loading input contribution file finished
+-------------------------------

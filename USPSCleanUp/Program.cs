@@ -15,8 +15,16 @@ namespace USPSCleanUp
         static void Main()
         {
             Application.EnableVisualStyles();
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                SetProcessDPIAware();
+            }
+
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UploadFile());
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

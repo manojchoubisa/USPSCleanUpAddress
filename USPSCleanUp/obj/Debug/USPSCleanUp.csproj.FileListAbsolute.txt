@@ -116,3 +116,22 @@ C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debu
 C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.CopyComplete
 C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.exe
 C:\Users\admin\Downloads\USPSCleanUp Final Code\USPSCleanUp\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\USPSCleanUp.exe.config
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\USPSCleanUp.exe
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\USPSCleanUp.pdb
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.dll
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\LinqToExcel.dll
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\Remotion.Data.Linq.dll
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\Remotion.dll
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\Remotion.Interfaces.dll
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\KellermanSoftware.USPS-Standardization.xml
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\bin\Debug\LinqToExcel.xml
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.Properties.Resources.resources
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.SetColumns.resources
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.UploadFile.resources
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.GenerateResource.cache
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.CoreCompileInputs.cache
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.csproj.CopyComplete
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.exe
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.pdb
+D:\Projects\USPSCleanUpAddress\USPSCleanUpAddress\USPSCleanUp\obj\Debug\USPSCleanUp.csprojAssemblyReference.cache

@@ -46,6 +46,7 @@
             this.lblSheetName = new System.Windows.Forms.Label();
             this.cbSheetList = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.tabPageProcessFiles = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlHide.SuspendLayout();
             this.SuspendLayout();
@@ -89,20 +90,21 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-19, 217);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 217);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1673, 448);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1417, 409);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Visible = false;
             // 
             // btnExportNewExcel
             // 
-            this.btnExportNewExcel.Location = new System.Drawing.Point(1110, 7);
+            this.btnExportNewExcel.Location = new System.Drawing.Point(1086, 14);
             this.btnExportNewExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportNewExcel.Name = "btnExportNewExcel";
-            this.btnExportNewExcel.Size = new System.Drawing.Size(159, 28);
+            this.btnExportNewExcel.Size = new System.Drawing.Size(109, 28);
             this.btnExportNewExcel.TabIndex = 6;
             this.btnExportNewExcel.Text = "Save Excel";
             this.btnExportNewExcel.UseVisualStyleBackColor = true;
@@ -112,7 +114,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(764, 83);
+            this.lblStatus.Location = new System.Drawing.Point(628, 85);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(62, 17);
@@ -122,7 +124,7 @@
             // 
             // btnErrorLog
             // 
-            this.btnErrorLog.Location = new System.Drawing.Point(1294, 7);
+            this.btnErrorLog.Location = new System.Drawing.Point(1202, 15);
             this.btnErrorLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnErrorLog.Name = "btnErrorLog";
             this.btnErrorLog.Size = new System.Drawing.Size(115, 27);
@@ -145,7 +147,7 @@
             // 
             // btnCleasing
             // 
-            this.btnCleasing.Location = new System.Drawing.Point(537, 13);
+            this.btnCleasing.Location = new System.Drawing.Point(689, 14);
             this.btnCleasing.Margin = new System.Windows.Forms.Padding(4);
             this.btnCleasing.Name = "btnCleasing";
             this.btnCleasing.Size = new System.Drawing.Size(143, 28);
@@ -157,10 +159,10 @@
             // 
             // btnDublicate
             // 
-            this.btnDublicate.Location = new System.Drawing.Point(840, 8);
+            this.btnDublicate.Location = new System.Drawing.Point(839, 14);
             this.btnDublicate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDublicate.Name = "btnDublicate";
-            this.btnDublicate.Size = new System.Drawing.Size(115, 27);
+            this.btnDublicate.Size = new System.Drawing.Size(115, 28);
             this.btnDublicate.TabIndex = 12;
             this.btnDublicate.Text = "View Dublicate";
             this.btnDublicate.UseVisualStyleBackColor = true;
@@ -169,10 +171,10 @@
             // 
             // btnClearDublicate
             // 
-            this.btnClearDublicate.Location = new System.Drawing.Point(975, 8);
+            this.btnClearDublicate.Location = new System.Drawing.Point(964, 14);
             this.btnClearDublicate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearDublicate.Name = "btnClearDublicate";
-            this.btnClearDublicate.Size = new System.Drawing.Size(115, 27);
+            this.btnClearDublicate.Size = new System.Drawing.Size(115, 28);
             this.btnClearDublicate.TabIndex = 13;
             this.btnClearDublicate.Text = "ClearDublicate";
             this.btnClearDublicate.UseVisualStyleBackColor = true;
@@ -182,7 +184,7 @@
             // lblfilepath
             // 
             this.lblfilepath.AutoSize = true;
-            this.lblfilepath.Location = new System.Drawing.Point(764, 113);
+            this.lblfilepath.Location = new System.Drawing.Point(628, 113);
             this.lblfilepath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfilepath.Name = "lblfilepath";
             this.lblfilepath.Size = new System.Drawing.Size(73, 17);
@@ -192,7 +194,7 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(701, 146);
+            this.txtFilePath.Location = new System.Drawing.Point(631, 134);
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.ReadOnly = true;
@@ -232,20 +234,30 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(715, 12);
+            this.btnCancel.Location = new System.Drawing.Point(1323, 15);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 23);
+            this.btnCancel.Size = new System.Drawing.Size(96, 28);
             this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Start Over";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tabPageProcessFiles
+            // 
+            this.tabPageProcessFiles.Location = new System.Drawing.Point(12, 650);
+            this.tabPageProcessFiles.Name = "tabPageProcessFiles";
+            this.tabPageProcessFiles.Size = new System.Drawing.Size(1417, 18);
+            this.tabPageProcessFiles.TabIndex = 20;
+            this.tabPageProcessFiles.Visible = false;
             // 
             // UploadFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 721);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1440, 677);
+            this.Controls.Add(this.tabPageProcessFiles);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbSheetList);
             this.Controls.Add(this.lblSheetName);
@@ -261,8 +273,10 @@
             this.Controls.Add(this.btnExportNewExcel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblmessage);
+            this.ForeColor = System.Drawing.Color.SteelBlue;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UploadFile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "File Manage";
             this.Load += new System.EventHandler(this.UploadFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -292,6 +306,7 @@
         private System.Windows.Forms.Label lblSheetName;
         private System.Windows.Forms.ComboBox cbSheetList;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ProgressBar tabPageProcessFiles;
     }
 }
 

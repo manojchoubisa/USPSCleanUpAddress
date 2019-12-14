@@ -24,6 +24,9 @@ namespace USPSCleanUp
 {
     public partial class UploadFile : Form
     {
+        BackgroundWorker defaultDataLoader;
+        BackgroundWorker defaultDataLoader_LoadFiles;
+
         Excel.Application sExcelApp;
         Excel.Workbook sWorkbook;
         private string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1};IMEX=1'";
@@ -56,10 +59,10 @@ namespace USPSCleanUp
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Logger.Log(ex, null);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -90,11 +93,21 @@ namespace USPSCleanUp
                 USPSCleanUp.UploadFile.dtsheetName.Clear();
                 USPSCleanUp.SetColumns.sheetCount = 0;
                 USPSCleanUp.SetColumns.FullColumnList.Clear();
-            }
-            catch (Exception)
-            {
 
-                throw;
+                USPSCleanUp.UploadFile.upload = false;
+                USPSCleanUp.UploadFile.dtsheetName.Clear();
+                USPSCleanUp.SetColumns.sheetCount = 0;
+                USPSCleanUp.SetColumns.FullColumnList.Clear();
+                USPSCleanUp.UploadFile.dt.Clear();
+
+                var fileupload = new UploadFile();
+                fileupload.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex, null);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -103,9 +116,64 @@ namespace USPSCleanUp
 
         public UploadFile()
         {
+            defaultDataLoader = new BackgroundWorker();
+            defaultDataLoader.WorkerReportsProgress = true;
+            defaultDataLoader.WorkerSupportsCancellation = true;
+            defaultDataLoader.DoWork += new DoWorkEventHandler(DataImport_Dowork);
+            defaultDataLoader.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ImportOperaions_RunWorkerCompleted);
+
+            defaultDataLoader_LoadFiles = new BackgroundWorker();
+            defaultDataLoader_LoadFiles.WorkerReportsProgress = true;
+            defaultDataLoader_LoadFiles.WorkerSupportsCancellation = true;
+            defaultDataLoader_LoadFiles.DoWork += new DoWorkEventHandler(DataLoad_Dowork);
+            defaultDataLoader_LoadFiles.RunWorkerCompleted += new RunWorkerCompletedEventHandler(LoadOperaions_RunWorkerCompleted);
+
             InitializeComponent();
 
         }
+        private void DataImport_Dowork(object sender, DoWorkEventArgs e)
+        {
+            Logger.Log(null, "Filling contribution PDF started");
+            ProcessCleansing();
+        }
+        private void DataLoad_Dowork(object sender, DoWorkEventArgs e)
+        {
+            ExportToExcelArgs args = (ExportToExcelArgs)e.Argument;
+
+            Logger.Log(null, "Loading input contribution file started");
+            PerformExportToExcel(args.ds, args.path);
+
+        }
+
+        private void ImportOperaions_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            HideProgressbar();
+            Logger.Log(null, "Filling contribution PDF finished");
+            //if (showSuccessMessage)
+            //{
+            //    MessageBox.Show("PDF creation is completed.");
+            //}
+        }
+
+        private void LoadOperaions_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            HideProgressbar();
+            Logger.Log(null, "Loading input contribution file finished");
+            //MessageBox.Show("Input file loaded.");
+        }
+        private void ShowProgressbar()
+        {
+            btnCancel.Enabled = false;
+            this.tabPageProcessFiles.Visible = true;
+            this.tabPageProcessFiles.Style = ProgressBarStyle.Marquee;
+            this.tabPageProcessFiles.MarqueeAnimationSpeed = 1;
+        }
+        private void HideProgressbar()
+        {
+            this.tabPageProcessFiles.Visible = false;
+            btnCancel.Enabled = true;
+        }
+
         private void Clear_Rec()
         {
             lblmessage.Visible = false;
@@ -314,7 +382,8 @@ namespace USPSCleanUp
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.Log(ex, null);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -482,18 +551,22 @@ namespace USPSCleanUp
             }
             catch (Exception ex1)
             {
-                throw ex1;
+                Logger.Log(ex1, null);
+                MessageBox.Show(ex1.Message);
             }
         }
 
         private void btnExportNewExcel_Click(object sender, EventArgs e)
         {
-
             Text_FilePath();
-            lblmessage.Visible = false;
-            lblStatus.Visible = false;
-            lblResult.Visible = false;
-            lblfilepath.Visible = false;
+
+            lblmessage.Invoke((MethodInvoker)delegate
+            {
+                lblmessage.Visible = false;
+                lblStatus.Visible = false;
+                lblResult.Visible = false;
+                lblfilepath.Visible = false;
+            });
 
             if (dt.Tables.Count > 0)
             {
@@ -515,20 +588,21 @@ namespace USPSCleanUp
 
                     ExportDataSetToExcel(dt, MyPath);
 
-                    lblStatus.Visible = true;
-                    lblStatus.Text = "File Exported Successfully";
-                    lblStatus.ForeColor = Color.Green;
+
+
                     //txtFilePath.Visible = true;
                     //txtFilePath.Text = "Exported File Path:- " + fullpath;
                     //txtFilePath.ForeColor = Color.Green;
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    Logger.Log(ex, null);
+                    MessageBox.Show(ex.Message);
                 }
 
             }
         }
+
         private void ExportDataSetToExcel(DataSet ds, string filepath)
         {
             try
@@ -545,44 +619,55 @@ namespace USPSCleanUp
                 {
                     path = openDlg.FileName;
                 }
-                sExcelApp = new Excel.Application();
-                sWorkbook = sExcelApp.Workbooks.Add(Type.Missing);
 
-                foreach (DataTable table in olddt.Tables)
+                ShowProgressbar();
+                if (!defaultDataLoader_LoadFiles.IsBusy)
+                    defaultDataLoader_LoadFiles.RunWorkerAsync(new ExportToExcelArgs() { ds = ds, path = path });
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex, null);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        class ExportToExcelArgs
+        {
+            internal DataSet ds { get; set; }
+            internal string path { get; set; }
+        }
+        void PerformExportToExcel(DataSet ds, string path)
+        {
+            sExcelApp = new Excel.Application();
+            sWorkbook = sExcelApp.Workbooks.Add(Type.Missing);
+
+            foreach (DataTable table in olddt.Tables)
+            {
+                //Add a new worksheet to workbook with the Datatable name
+                Excel.Worksheet excelWorkSheet = sWorkbook.Sheets.Add();
+                excelWorkSheet.Name = table.TableName + "old";
+
+                for (int i = 1; i < table.Columns.Count + 1; i++)
                 {
-                    //Add a new worksheet to workbook with the Datatable name
-                    Excel.Worksheet excelWorkSheet = sWorkbook.Sheets.Add();
-                    excelWorkSheet.Name = table.TableName + "old";
+                    excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+                }
 
-                    for (int i = 1; i < table.Columns.Count + 1; i++)
+                for (int j = 0; j < table.Rows.Count; j++)
+                {
+                    for (int k = 0; k < table.Columns.Count; k++)
                     {
-                        excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
-                    }
-
-                    for (int j = 0; j < table.Rows.Count; j++)
-                    {
-                        for (int k = 0; k < table.Columns.Count; k++)
+                        DataColumnCollection columns = table.Columns;
+                        if (columns.Contains("Error"))
                         {
-                            DataColumnCollection columns = table.Columns;
-                            if (columns.Contains("Error"))
+                            if (table.Rows[j]["Error"].ToString() != "")
                             {
-                                if (table.Rows[j]["Error"].ToString() != "")
-                                {
 
-                                    excelWorkSheet.Cells[j + 2, 1].Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                                excelWorkSheet.Cells[j + 2, 1].Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
 
-                                    excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
-                                }
-                                else
-                                {
-
-                                    excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
-
-
-                                }
+                                excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
                             }
-
-
                             else
                             {
 
@@ -591,52 +676,68 @@ namespace USPSCleanUp
 
                             }
                         }
-                    }
 
 
-                }
-                foreach (DataTable table in ds.Tables)
-                {
-                    //Add a new worksheet to workbook with the Datatable name
-                    Excel.Worksheet excelWorkSheet = sWorkbook.Sheets.Add();
-                    excelWorkSheet.Name = table.TableName + "New";
-
-                    for (int i = 1; i < table.Columns.Count + 1; i++)
-                    {
-                        excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
-                    }
-
-                    for (int j = 0; j < table.Rows.Count; j++)
-                    {
-                        for (int k = 0; k < table.Columns.Count; k++)
+                        else
                         {
+
                             excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+
+
                         }
                     }
                 }
 
 
-
-                sWorkbook.SaveAs(path + ".xls");
-
-                sWorkbook.Close(0);
-                sExcelApp.Quit();
-
-
             }
-            catch (Exception ex)
+            foreach (DataTable table in ds.Tables)
             {
+                //Add a new worksheet to workbook with the Datatable name
+                Excel.Worksheet excelWorkSheet = sWorkbook.Sheets.Add();
+                excelWorkSheet.Name = table.TableName + "New";
 
-                throw;
+                for (int i = 1; i < table.Columns.Count + 1; i++)
+                {
+                    excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+                }
+
+                for (int j = 0; j < table.Rows.Count; j++)
+                {
+                    for (int k = 0; k < table.Columns.Count; k++)
+                    {
+                        excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+                    }
+                }
             }
+
+            string file = Path.GetFileNameWithoutExtension(path);
+
+            path = Path.Combine(Path.GetDirectoryName(path), file + ".xlsx");
+
+            sWorkbook.SaveAs(path);
+
+            sWorkbook.Close(0);
+            sExcelApp.Quit();
+
+
+            lblStatus.Invoke((MethodInvoker)delegate
+            {
+                lblStatus.Visible = true;
+                lblStatus.Text = "File Exported Successfully";
+                lblStatus.ForeColor = Color.Green;
+            });
         }
         private void Text_FilePath()
         {
-            txtFilePath.ReadOnly = true;
-            txtFilePath.BorderStyle = 0;
-            txtFilePath.BackColor = this.BackColor;
-            txtFilePath.TabStop = false;
-            txtFilePath.Visible = false;
+            txtFilePath.Invoke((MethodInvoker)delegate
+            {
+                txtFilePath.ReadOnly = true;
+                txtFilePath.BorderStyle = 0;
+                txtFilePath.BackColor = this.BackColor;
+                txtFilePath.TabStop = false;
+                txtFilePath.Visible = false;
+            });
+
         }
         //private void btnUpdateExitingExcel_Click(object sender, EventArgs e)
         //{
@@ -719,7 +820,8 @@ namespace USPSCleanUp
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.Log(ex, null);
+                MessageBox.Show(ex.Message);
             }
         }
         private void Grid_Style1()
@@ -729,7 +831,14 @@ namespace USPSCleanUp
 
         private void btnCleasing_Click(object sender, EventArgs e)
         {
-            btnCancel.Visible = false;
+            ShowProgressbar();
+            if (!defaultDataLoader.IsBusy)
+                defaultDataLoader.RunWorkerAsync();
+        }
+        void ProcessCleansing()
+        {
+
+            //btnCancel.Visible = false;
             cbSheetList.DataSource = USPSCleanUp.UploadFile.dtsheetName;
 
 
@@ -737,11 +846,14 @@ namespace USPSCleanUp
             {
                 foreach (var sheet in USPSCleanUp.UploadFile.dtsheetName)
                 {
-
-
                     Text_FilePath();
-                    btnUpload.Visible = false;
-                    textBox1.Visible = false;
+
+                    btnUpload.Invoke((MethodInvoker)delegate
+                    {
+                        btnUpload.Visible = false;
+                        textBox1.Visible = false;
+                    });
+
                     var currentsheet = USPSCleanUp.SetColumns.FullColumnList.Where(x => x.SheetName == sheet).FirstOrDefault();
                     if (currentsheet != null)
                     {
@@ -753,8 +865,11 @@ namespace USPSCleanUp
                         Housenocol = currentsheet.Housenocol;
                         if (dt.Tables[sheet].Rows.Count > 0)
                         {
-                            btnCleasing.Text = "Loading.....";
-                            btnCleasing.Enabled = false;
+                            btnCleasing.Invoke((MethodInvoker)delegate
+                            {
+                                btnCleasing.Text = "Loading.....";
+                                btnCleasing.Enabled = false;
+                            });
                         }
 
                         if (dt.Tables[sheet].Rows != null && dt.Tables[sheet].Rows.Count > 0)
@@ -780,11 +895,17 @@ namespace USPSCleanUp
                                     }
                                     if (!string.IsNullOrEmpty(columnValue))
                                     {
-                                        whereclasue += "[" + columnname + "] =" + "'" + row[columnname] + "'";
-                                        if (i < lcolumnlist.Count - 1)
-                                        {
+                                        if (columnValue.Contains("'"))
+                                            columnValue = columnValue.Replace("'", "''");
+
+                                        if (!string.IsNullOrEmpty(whereclasue))
                                             whereclasue += " and ";
-                                        }
+                                        whereclasue += "[" + columnname + "] =" + "'" + columnValue + "'";
+
+                                        //if (i < lcolumnlist.Count - 1)
+                                        //{
+                                        //    whereclasue += " and ";
+                                        //}
                                     }
                                 }
 
@@ -865,11 +986,18 @@ namespace USPSCleanUp
                                     }
                                     if (!string.IsNullOrEmpty(columnValue))
                                     {
-                                        whereclasue += "[" + columnname + "] =" + "'" + row[columnname] + "'";
-                                        if (i < lcolumnlist.Count - 1)
-                                        {
+                                        if (columnValue.Contains("'"))
+                                            columnValue = columnValue.Replace("'", "''");
+
+                                        if (!string.IsNullOrEmpty(whereclasue))
                                             whereclasue += " and ";
-                                        }
+
+                                        whereclasue += "[" + columnname + "] =" + "'" + columnValue + "'";
+
+                                        //if (i < lcolumnlist.Count - 1)
+                                        //{
+                                        //    whereclasue += " and ";
+                                        //}
                                     }
                                 }
                                 var CurrentRow = olddt.Tables[sheet].Select(whereclasue).FirstOrDefault();
@@ -883,13 +1011,48 @@ namespace USPSCleanUp
                                             {
                                                 try
                                                 {
+                                                    if (!string.IsNullOrEmpty(Addressline1col))
+                                                    {
+                                                        var add1Value = row.Field<object>(Addressline1col);
+                                                        if (add1Value != null)
+                                                            oldaddress1 = Convert.ToString(add1Value);
+                                                    }
 
-                                                    oldaddress1 = row.Field<string>(Addressline1col);
-                                                    oldaddress2 = row.Field<string>(AddressLine2col);
-                                                    oldzip = row.Field<string>(Zipcol);
-                                                    oldstate = row.Field<string>(Statecol);
-                                                    oldcity = row.Field<string>(Citycol);
-                                                    oldHouseNo = row.Field<string>(Housenocol);
+                                                    if (!string.IsNullOrEmpty(AddressLine2col))
+                                                    {
+                                                        var value = row.Field<object>(AddressLine2col);
+                                                        if (value != null)
+                                                            oldaddress2 = Convert.ToString(value);
+                                                    }
+
+                                                    if (!string.IsNullOrEmpty(Zipcol))
+                                                    {
+                                                        var zipValue = row.Field<object>(Zipcol);
+                                                        //var zipValue = row.Field<double?>(Zipcol);
+                                                        if (zipValue != null)
+                                                            oldzip = Convert.ToString(zipValue);
+                                                    }
+
+                                                    if (!string.IsNullOrEmpty(Statecol))
+                                                    {
+                                                        var value = row.Field<object>(Statecol);
+                                                        if (value != null)
+                                                            oldstate = Convert.ToString(value);
+                                                    }
+
+                                                    if (!string.IsNullOrEmpty(Citycol))
+                                                    {
+                                                        var value = row.Field<object>(Citycol);
+                                                        if (value != null)
+                                                            oldcity = Convert.ToString(value);
+                                                    }
+
+                                                    if (!string.IsNullOrEmpty(Housenocol))
+                                                    {
+                                                        var value = row.Field<object>(Housenocol);
+                                                        if (value != null)
+                                                            oldHouseNo = Convert.ToString(value);
+                                                    }
 
                                                     lineno++;
                                                     Address a = new Address();
@@ -936,41 +1099,51 @@ namespace USPSCleanUp
                                 }
                             }
                             dt.Tables[sheet].AcceptChanges();
-                            lblResult.Visible = true;
-                            lblResult.Text = "Record Successfully Updated";
-                            lblResult.ForeColor = Color.Green;
+
+                            lblResult.Invoke((MethodInvoker)delegate
+                            {
+                                lblResult.Visible = true;
+                                lblResult.Text = "Record Successfully Updated";
+                                lblResult.ForeColor = Color.Green;
+                            });
                         }
 
 
 
                     }
-                    btnUpload.Text = "Upload";
-                    btnUpload.Enabled = true;
-                    btnExportNewExcel.Visible = true;
-                    // btnUpdateExitingExcel.Visible = true;
-                    btnErrorLog.Visible = true;
-                    btnUpload.Visible = true;
-                    textBox1.Visible = true;
 
-                    btnCleasing.Text = "Cleaning Address";
-                    btnCleasing.Visible = false;
-                    btnDublicate.Visible = true;
-                    btnClearDublicate.Visible = true;
-                    lblResult.Visible = true;
-                    lblSheetName.Visible = true;
-                    cbSheetList.Visible = true;
-                    string tablename = cbSheetList.SelectedValue.ToString();
-                    dataGridView1.Visible = true;
-                    dataGridView1.DataSource = dt.Tables[tablename];
+                    btnUpload.Invoke((MethodInvoker)delegate
+                    {
+                        btnUpload.Text = "Upload";
+                        btnUpload.Enabled = true;
+                        btnExportNewExcel.Visible = true;
+                        // btnUpdateExitingExcel.Visible = true;
+                        btnErrorLog.Visible = true;
+                        btnUpload.Visible = true;
+                        textBox1.Visible = true;
+
+                        btnCleasing.Text = "Cleaning Address";
+                        btnCleasing.Visible = false;
+                        btnDublicate.Visible = true;
+                        btnClearDublicate.Visible = true;
+                        lblResult.Visible = true;
+                        lblSheetName.Visible = true;
+                        cbSheetList.Visible = true;
+                        string tablename = cbSheetList.SelectedValue.ToString();
+                        dataGridView1.Visible = true;
+                        dataGridView1.DataSource = dt.Tables[tablename];
+                    });
                 }
             }
             else
             {
-                lblmessage.Visible = true;
-                lblmessage.Text = "No Record Found";
-                lblmessage.ForeColor = Color.Red;
+                lblmessage.Invoke((MethodInvoker)delegate
+                {
+                    lblmessage.Visible = true;
+                    lblmessage.Text = "No Record Found";
+                    lblmessage.ForeColor = Color.Red;
+                });
             }
-
         }
         private void btnDublicate_Click(object sender, EventArgs e)
         {
